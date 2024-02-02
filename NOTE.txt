@@ -1,0 +1,28 @@
+
+java -> class: javac [tên file]/[*].java
+
+class -> exe: java [tên class]
+
+Sửa -> làm lại
+
+dịch ngược class -> java: javap [tên class]
+
+
+-> .bat
+
+javac [tên file]/[*].java
+java [tên class]
+pause
+
+
+
+// Thư viện
+
+java.swing // gui
+java.io // input output
+java.util
+java.sql // csdl
+
+
+//
+
