@@ -1,0 +1,8 @@
+2;88U1-992.48;Not Available;13:52 26/11/2023;Mat kinh chieu hau trai
+2;67M6-230.26;Not Available;11:07 16/08/2008;Mat kinh chieu hau phai
+4;10B3-247.86;Not Available;21:31 06/06/2009;Mat kinh chieu hau phai
+0;Not Available;2582;04:36 23/05/2009;Not Available
+2;82X6-917.20;Not Available;10:38 14/12/2010;Mat kinh chieu hau trai
+2;4W3-910.66;Not Available;22:44 07/12/2013;Mat kinh chieu hau trai
+4;35T5-4405;Not Available;15:58 13/02/2011;Binh thuong
+0;Not Available;1248;23:57 05/03/2019;Not Available
