@@ -52,7 +52,7 @@ public class ghiFile {
 					char B2 = (char)('A' + r.nextInt(26));
 					String B3;
 					int d = r.nextInt(9);
-					if (d == 0) continue;
+					if (d == 0) B3 = "";
 					else B3 = d + "";
 					int B4t = r.nextInt(99999);
 					String B4 = B4t + "";
@@ -94,7 +94,7 @@ public class ghiFile {
 				
 			}
 			w.close();
-			System.out.println("Da tao xong\n");
+			System.out.println("Da tao xong ghi1\n");
 		} catch(Exception e) {
 			System.out.println("Loi o ham ghi input1: " + e.getMessage());
 		}
@@ -161,7 +161,7 @@ public class ghiFile {
 					}
 					w.println(loaiXe + ";" + bienSo + ";" + soVeXe + ";" + thoiGianRa + ";" + tinhTrang);
 				}
-				System.out.println("Da tao xong\n");
+				System.out.println("Da tao xong ghi2\n");
 				r.close();
 			}
 			catch (Exception e)
@@ -222,29 +222,36 @@ public class ghiFile {
 					String tinhTrangRa = ds2[4];
 					// tinh tien
 					double timeinout = timeout.getTime() - timein.getTime();
-					Long money;
+					double mo;
 					boolean check = tinhTrangVao.contains(tinhTrangRa);
 					if (check == false)
 					{
 						w.println(loaiXe + ";" + bienSo + ";" + soVeXe + ";" + thoiGianVao + ";" + thoiGianRa + "; Chua xac dinh - Dang xu ly boi thuong");
+						continue;
 					}
 					else if (loaiXei == 0)
 					{
 						timeinout = Math.ceil(timeinout / (24 * 60 * 60 * 1000));
-						money = (Long)timeinout * 1000;
+						mo = timeinout * 1000;
+						String t = mo + "";
+						String money = t.substring(0, t.length() - 2);
 						w.println(loaiXe + ";" + bienSo + ";" + soVeXe + ";" + thoiGianVao + ";" + thoiGianRa + ";"+ money);
 					}
 					else if (loaiXei == 2)
 					{
 						timeinout = Math.ceil(timeinout / (24 * 60 * 60 * 1000));
-						money = Math.ceil(timeinout) * 3000;
-						w.println(loaiXe + ";" + bienSo + ";" + soVeXe + ";" + thoiGianVao + ";" + thoiGianRa + ";" + Math.ceil(timeinout) + ";"+ money);
+						mo = timeinout * 3000;
+						String t = mo + "";
+						String money = t.substring(0, t.length() - 2);
+						w.println(loaiXe + ";" + bienSo + ";" + soVeXe + ";" + thoiGianVao + ";" + thoiGianRa + ";"+ money);
 					}
 					else if (loaiXei == 4)
 					{
 						timeinout = Math.ceil(timeinout / (60 * 60 * 1000 / 2));
-						money = Math.ceil(timeinout) * 5000;
-						w.println(loaiXe + ";" + bienSo + ";" + soVeXe + ";" + thoiGianVao + ";" + thoiGianRa + ";" + Math.ceil(timeinout) + ";"+ money);
+						mo = timeinout * 5000;
+						String t = mo + "";
+						String money = t.substring(0, t.length() - 2);
+						w.println(loaiXe + ";" + bienSo + ";" + soVeXe + ";" + thoiGianVao + ";" + thoiGianRa + ";"+ money);
 					}
 				}
 				r1.close();

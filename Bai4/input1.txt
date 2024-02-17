@@ -1,8 +1,100 @@
-2;88U1-992.48;Not Available;07:19 26/11/2023;Mat kinh chieu hau trai
-2;67M6-230.26;Not Available;11:45 15/08/2008;Mat kinh chieu hau phai
-4;10B3-247.86;Not Available;14:06 06/06/2009;Mat kinh chieu hau phai
-0;Not Available;2582;08:49 22/05/2009;Not Available
-2;82X6-917.20;Not Available;14:45 13/12/2010;Mat kinh chieu hau trai
-2;4W3-910.66;Not Available;15:11 07/12/2013;Mat kinh chieu hau trai
-4;35T5-4405;Not Available;05:40 13/02/2011;Binh thuong
-0;Not Available;1248;22:30 04/03/2019;Not Available
+4;70X3-591.05;Not Available;22:03 02/10/2009;Mat kinh chieu hau phai
+4;73E3-800.23;Not Available;08:32 17/03/2022;Mat kinh chieu hau phai
+0;Not Available;8027;18:46 18/11/2016;Not Available
+0;Not Available;7033;08:35 03/04/2013;Not Available
+0;Not Available;6826;10:10 07/04/2009;Not Available
+0;Not Available;1385;15:55 17/12/2007;Not Available
+2;77D8-459.97;Not Available;16:51 10/06/2011;Mat kinh chieu hau trai
+2;41Z2-972.40;Not Available;05:05 29/10/2014;Mat kinh chieu hau trai
+0;Not Available;2728;23:46 18/09/2006;Not Available
+2;74S3-474.59;Not Available;18:47 08/10/2011;Mat kinh chieu hau trai
+4;60W7-481.93;Not Available;07:36 08/08/2001;Lung lop xe
+0;Not Available;688;11:01 18/10/2016;Not Available
+0;Not Available;6395;12:20 13/11/2011;Not Available
+0;Not Available;3225;19:03 02/02/2009;Not Available
+2;87Z-283.81;Not Available;14:17 03/03/2016;Mat kinh chieu hau trai
+2;35S7-120.36;Not Available;10:45 29/05/2009;Binh thuong
+0;Not Available;2842;12:59 23/07/2011;Not Available
+2;63G7-747.58;Not Available;07:50 03/10/2021;Lung lop xe
+4;7P3-342.32;Not Available;04:03 31/12/2012;Lung lop xe
+0;Not Available;5595;03:45 26/05/2016;Not Available
+4;4T4-4279;Not Available;20:03 22/10/2007;Lung lop xe
+0;Not Available;1236;11:16 04/06/2006;Not Available
+2;21R7-687.32;Not Available;14:33 22/05/2001;Lung lop xe
+4;52V2-952.50;Not Available;15:40 20/11/2020;Lung lop xe
+2;80F7-778.42;Not Available;10:53 04/09/2014;Lung lop xe
+4;4D4-289.05;Not Available;22:06 07/05/2005;Mat kinh chieu hau phai
+2;35F3-101.40;Not Available;12:40 06/03/2008;Lung lop xe
+2;6F4-2385;Not Available;01:56 24/02/2008;Binh thuong
+0;Not Available;1331;15:48 05/09/2002;Not Available
+0;Not Available;2277;03:45 12/10/2023;Not Available
+2;85D6-4080;Not Available;15:55 02/08/2006;Lung lop xe
+4;13T3-8594;Not Available;08:10 14/03/2005;Binh thuong
+2;10P5-773.24;Not Available;17:56 05/11/2008;Mat kinh chieu hau phai
+0;Not Available;9803;05:10 04/04/2014;Not Available
+0;Not Available;2798;04:25 08/03/2023;Not Available
+0;Not Available;918;16:51 29/11/2017;Not Available
+2;94H7-178.76;Not Available;11:35 26/06/2021;Mat kinh chieu hau phai
+0;Not Available;680;11:03 11/03/2016;Not Available
+4;7N1-309.96;Not Available;13:02 08/04/2012;Binh thuong
+4;33J1-838.37;Not Available;20:36 27/07/2010;Binh thuong
+2;72J1-129.60;Not Available;23:13 21/11/2017;Binh thuong
+2;57U7-409.68;Not Available;02:04 25/08/2014;Mat kinh chieu hau phai
+4;29L2-343.80;Not Available;03:18 13/12/2006;Binh thuong
+0;Not Available;8181;02:18 21/12/2010;Not Available
+0;Not Available;3503;20:41 20/10/2004;Not Available
+4;41R4-5002;Not Available;10:30 30/10/2001;Mat kinh chieu hau phai
+2;73B1-664.48;Not Available;01:36 24/02/2019;Mat kinh chieu hau trai
+4;28E6-2778;Not Available;17:37 20/06/2005;Mat kinh chieu hau trai
+2;94Q3-717.55;Not Available;05:13 26/12/2012;Binh thuong
+2;42R5-436.83;Not Available;08:33 16/01/2019;Mat kinh chieu hau trai
+0;Not Available;4414;00:22 15/02/2018;Not Available
+4;67O6-302.84;Not Available;03:10 14/09/2002;Binh thuong
+2;50T4-386.08;Not Available;19:42 03/03/2014;Binh thuong
+4;22R4-874.19;Not Available;06:16 25/08/2011;Binh thuong
+4;6R7-416.13;Not Available;22:07 01/03/2022;Mat kinh chieu hau phai
+0;Not Available;8590;22:11 11/08/2005;Not Available
+2;36Z5-747.25;Not Available;03:32 27/05/2017;Binh thuong
+2;49F7-157.47;Not Available;01:19 10/10/2003;Lung lop xe
+0;Not Available;7695;12:04 24/05/2000;Not Available
+2;69O1-155.64;Not Available;21:09 23/11/2020;Mat kinh chieu hau trai
+4;73H6-177.17;Not Available;22:55 18/12/2008;Mat kinh chieu hau trai
+2;3M2-975.01;Not Available;13:05 17/11/2009;Mat kinh chieu hau trai
+2;88B3-691.87;Not Available;19:37 08/11/2000;Mat kinh chieu hau phai
+2;56Z1-8863;Not Available;13:57 19/07/2011;Mat kinh chieu hau phai
+2;11S4-750.62;Not Available;21:31 06/06/2006;Binh thuong
+2;56U2-143.53;Not Available;14:46 08/07/2024;Lung lop xe
+0;Not Available;4486;18:42 05/06/2010;Not Available
+0;Not Available;4564;01:55 04/08/2017;Not Available
+0;Not Available;5293;15:22 04/03/2010;Not Available
+2;84A1-272.22;Not Available;02:52 20/06/2005;Mat kinh chieu hau trai
+2;89E4-973.78;Not Available;05:55 18/02/2013;Binh thuong
+2;57Q6-492.87;Not Available;11:22 19/03/2008;Lung lop xe
+2;58G7-464.96;Not Available;18:43 22/11/2016;Binh thuong
+4;51A3-219.50;Not Available;20:41 20/04/2020;Lung lop xe
+4;53Z6-920.57;Not Available;19:06 21/03/2009;Binh thuong
+2;21U3-346.27;Not Available;04:19 16/12/2010;Mat kinh chieu hau trai
+0;Not Available;1538;06:53 12/03/2003;Not Available
+0;Not Available;1302;05:25 03/05/2014;Not Available
+0;Not Available;2026;10:14 30/01/2005;Not Available
+4;66O4-8829;Not Available;05:07 29/06/2022;Lung lop xe
+4;78V4-146.40;Not Available;15:48 13/09/2020;Mat kinh chieu hau trai
+4;80Y8-959.69;Not Available;00:23 14/10/2019;Mat kinh chieu hau trai
+2;95T7-485.97;Not Available;07:35 14/07/2021;Mat kinh chieu hau trai
+4;73L2-264.23;Not Available;06:18 28/10/2010;Mat kinh chieu hau phai
+0;Not Available;682;09:50 16/02/2014;Not Available
+4;35R1-252.12;Not Available;05:00 14/12/2022;Mat kinh chieu hau trai
+2;59G5-102.94;Not Available;23:50 12/05/2022;Binh thuong
+4;31N-4583;Not Available;20:53 22/11/2019;Binh thuong
+2;21R2-111.31;Not Available;13:06 09/09/2002;Mat kinh chieu hau phai
+4;31B2-731.44;Not Available;01:16 22/07/2016;Mat kinh chieu hau trai
+0;Not Available;1141;08:28 05/05/2009;Not Available
+2;58D2-569.37;Not Available;16:10 25/02/2019;Mat kinh chieu hau trai
+0;Not Available;6717;20:12 14/01/2009;Not Available
+4;21X3-542.02;Not Available;18:22 06/04/2021;Lung lop xe
+0;Not Available;7060;18:14 10/07/2022;Not Available
+2;93X8-886.86;Not Available;08:07 02/11/2013;Lung lop xe
+2;20O7-694.05;Not Available;19:33 15/09/2005;Mat kinh chieu hau phai
+2;21N5-921.47;Not Available;10:11 06/01/2014;Mat kinh chieu hau trai
+4;37P7-9075;Not Available;03:59 18/04/2003;Binh thuong
+4;88O5-129.62;Not Available;01:50 30/05/2019;Mat kinh chieu hau trai
