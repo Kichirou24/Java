@@ -1,0 +1,111 @@
+LẬP TRÌNH GIAO DIỆN
+1. Lập trình hướng sự kiện
+	Sự kiện
+	Đáp ứng sự kiện
+Lập trình giao diện thì tự đặt ra 2 câu hỏi và tự trả lời:
+	Lập trình trên đối tượng(điều khiển) nào? (*)
+	Lập trình trên sự kiện nào của điều khiển đó? (*)
+2. Các điều khiển thường dùng
+	2.1 Jframe: là 1 form để thiết kế giao diện
+
+Source (Mã)
+Desgin (Thiết kế)
+
+****	Tạo 1 package -> Tạo JFrame -> Chọn cửa sổ (Desgin) -> Layout: (absolute) (*)
+
+JLabel		Ô hiện chữ
+JTextField	Ô viết chữ (input)
+JCombobox	Hộp (có mũi tên + nhấn mới bung)
+JList		Hộp (k có mũi tên + bung sẵn)
+JButton		Nút ấn
+
+	2.2 Label: hiển thị chữ
+Thuộc tính (Text): Gõ văn bản
+	2.3 Text Field: Nhập xuất dữ liệu
+Thuộc tính (Variable): txtTên
+Lấy giá trị ra: txtTên.getText()
+Đưa giá trị vào: txtTên.setText(chuỗi)
+Sự kiện: Keypress: Xảy ra khi nhấn phím
+
+Lấy mã phím vừa nhập: e.getKeyCode();
+(10: Enter, 27: Esc, 97:a, 65: A, 49:0)
+
+Sự kiện: WindowOpened: xảy ra khi vừa chạy Jframe lên
+Sự kiện: WindowClosing: xảy ra khi đóng Jframe
+
+System.exit(1) // tắt chương trình
+
+	2.4 ComboBox
+Thuộc tính (Variable): đặt tên: cmbTên
+Đưa giá trị vào cmbTên.AddItem("Chuỗi")
+Lấy giá trị ra cmbTên.getSelectedItem();
+Sự kiện thường dùng: ItemStatechanged: xảy ra khi chọn (thay đổi) 1 mục
+
+	2.5 Button: Nút
+	Click double vào button để viết chức năng của nút
+	Chuột phải ở trên đối tượng cần viết chức năng (Add Event handler)
+
+
+
+*****	FILE	*****
+
+<->	Đọc file
+try{
+FileReader f = new FileReader("tên file");
+BufferedReader r = new BufferedReader(f);
+while (true) {
+	String st = r.readLine();
+	if (st == null || st == "") break;
+	System.out.println(st);
+	}
+	r.close();
+	} catch(Exception e)
+	{
+System.err.println("Loi: " + e.getMessage());
+}
+
+<->	Ghi file
+try{
+FileWriter f = new FileWriter("tên file");
+PrintWriter w = new PrintWriter(f);
+w.println("...");
+f.close();
+} catch(Exception e)
+{
+System.err.println("Sai: " + e.getMessage());
+}
+
+*****	ArrayList	*****
+ArrayList <Tên Biến> = new ArrayList();
+ArrayList <Kiểu><Tên Biến> = new ArrayList<Kiểu>();
+- Add(Object)
+- Size(): Số phần tử trong ArrayList
+- Get(i): trả về Object tại chỉ số i
+- Remove(i): xóa phần tử thứ i
+- ...
+
+
+
+
+
+
+
+
+
+****** BÀI TÂP: Sửa lại cách đọc/ghi file cũ ************* LÀM BÀI TẬP 2, 3, 4
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
