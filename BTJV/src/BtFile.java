@@ -1,6 +1,8 @@
 import java.io.BufferedReader;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
+import java.io.FileReader;
+import java.io.FileWriter;
 import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
 import java.io.PrintWriter;
@@ -10,9 +12,8 @@ public class BtFile {
 	public void TaoDanhSach(int n)
 	{
 		try {
-			FileOutputStream f = new FileOutputStream("sv.txt");
-			OutputStreamWriter o = new OutputStreamWriter(f);
-			PrintWriter w = new PrintWriter(o);
+			FileWriter f = new FileWriter("sv.txt");
+			PrintWriter w = new PrintWriter(f);
 			
 			Random r = new Random();
 			BtMang m = new BtMang();
@@ -31,9 +32,8 @@ public class BtFile {
 	public void XuatDanhSach(int n)
 	{
 		try {
-			FileInputStream f = new FileInputStream("sv.txt");
-			InputStreamReader i = new InputStreamReader(f);
-			BufferedReader r = new BufferedReader(i);
+			FileReader f = new FileReader("sv.txt");
+			BufferedReader r = new BufferedReader(f);
 			
 			while (true)
 			{
@@ -52,9 +52,8 @@ public class BtFile {
 	
 	public void Show(int n) {
 		try {
-			FileInputStream f = new FileInputStream("sv.txt");
-			InputStreamReader i = new InputStreamReader(f);
-			BufferedReader r = new BufferedReader(i);
+			FileReader f = new FileReader("sv.txt");
+			BufferedReader r = new BufferedReader(f);
 			
 			Random rd = new Random();
 			while (true)
@@ -86,9 +85,8 @@ public class BtFile {
 		double sum = 0;
 		Integer c = 0;
 		try {
-			FileInputStream f = new FileInputStream("sv.txt");
-			InputStreamReader i = new InputStreamReader(f);
-			BufferedReader r = new BufferedReader(i);
+			FileReader f = new FileReader("sv.txt");
+			BufferedReader r = new BufferedReader(f);
 			
 			while (true)
 			{
@@ -112,9 +110,8 @@ public class BtFile {
 		Integer pass = 0;
 		Integer fail = 0;
 		try {
-			FileInputStream f = new FileInputStream("sv.txt");
-			InputStreamReader i = new InputStreamReader(f);
-			BufferedReader r = new BufferedReader(i);
+			FileReader f = new FileReader("sv.txt");
+			BufferedReader r = new BufferedReader(f);
 			
 			while (true)
 			{
@@ -138,9 +135,8 @@ public class BtFile {
 	public void Find(String ten)
 	{
 		try {
-			FileInputStream f = new FileInputStream("sv.txt");
-			InputStreamReader i = new InputStreamReader(f);
-			BufferedReader r = new BufferedReader(i);
+			FileReader f = new FileReader("sv.txt");
+			BufferedReader r = new BufferedReader(f);
 			
 			while (true)
 			{
@@ -165,9 +161,8 @@ public class BtFile {
 	public void NoValid()
 	{
 		try {
-			FileInputStream f = new FileInputStream("sv.txt");
-			InputStreamReader i = new InputStreamReader(f);
-			BufferedReader r = new BufferedReader(i);
+			FileReader f = new FileReader("sv.txt");
+			BufferedReader r = new BufferedReader(f);
 			
 			while (true)
 			{

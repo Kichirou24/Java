@@ -1,6 +1,7 @@
 import java.io.BufferedReader;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
+import java.io.FileReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.OutputStream;
@@ -14,9 +15,8 @@ public class BtArrayList {
 	public void TaoDanhSach() {
 		try
 		{
-			FileInputStream f = new FileInputStream("sv.txt");
-			InputStreamReader i = new InputStreamReader(f);
-			BufferedReader r = new BufferedReader(i);
+			FileReader f = new FileReader("sv.txt");
+			BufferedReader r = new BufferedReader(f);
 			
 			while (true)
 			{
