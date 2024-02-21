@@ -86,12 +86,6 @@ ArrayList <Kiểu><Tên Biến> = new ArrayList<Kiểu>();
 
 
 
-
-
-
-
-
-
 ****** BÀI TÂP: Sửa lại cách đọc/ghi file cũ ************* LÀM BÀI TẬP 2, 3, 4
 
 
