@@ -20,6 +20,10 @@ public class File {
 		System.out.println("---------------");
 		// Tinh trung binh dtb
 		System.out.println(f.Average());
+		System.out.println("---------------");
+		// In dong khong hop le
+		f.NoValid();
+		// Dong file
 		input.close();
 		input2.close();
 	}

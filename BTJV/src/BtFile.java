@@ -6,6 +6,8 @@ import java.io.FileWriter;
 import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
 import java.io.PrintWriter;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.Random;
 
 public class BtFile {
@@ -158,6 +160,20 @@ public class BtFile {
 		}
 	}
 	
+	public static boolean isValidDate(String dateString, String dateFormat)
+	{
+		SimpleDateFormat d = new SimpleDateFormat(dateFormat);
+		d.setLenient(false);
+		// kiem tra xem dateString co hop le voi dinh dang dateFormat khong
+		try {
+			d.parse(dateString);
+			return true;
+		} catch (ParseException e)
+		{
+			return false;
+		}
+	}
+	
 	public void NoValid()
 	{
 		try {
@@ -169,15 +185,25 @@ public class BtFile {
 				String st = r.readLine();
 				if (st == "" || st == null) break;
 				String[] ds = st.split("[;]");
-				String hvt = ds[1];
-				System.out.println(hvt);
+				String date = ds[2];
+				double dtb = Double.parseDouble(ds[3]);
+				
+				if (isValidDate(date, "dd/MM/yyyy") == false || dtb > 10.0 || dtb < 0.0)
+				{
+					System.out.println(st);
+				}
 				
 			}
 			r.close();
 		}
 		catch (Exception e)
 		{
-			System.out.println("Loi o ham TimKiem: " + e.getMessage());
+			System.out.println("Loi o ham KiemTra: " + e.getMessage());
 		}
+	}
+	
+	public static void main(String[] args) {
+		BtFile f = new BtFile();
+		f.NoValid();
 	}
 }
