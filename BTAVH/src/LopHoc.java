@@ -255,6 +255,10 @@ public class LopHoc {
 				}
 			}
 		}
+		else
+		{
+			System.out.println("Khum tim thay");
+		}
 	}
 	
 	public static void main(String[] args) {
