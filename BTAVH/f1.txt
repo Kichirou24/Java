@@ -1,0 +1,5 @@
+cntt1|Nguyen Huu Hung|5.5|7.5|6.5|Dau
+cntt2|Nguyen Thi Hung|5.5|3.5|4.5|Rot
+cntt3|Ngo Huu Hung|2.5|3.5|3.0|Rot
+cntt4|Nguyen Van Thao|9.5|7.5|8.5|Dau
+cntt5|Tran Thi Lung|8.5|7.5|8.0|Dau

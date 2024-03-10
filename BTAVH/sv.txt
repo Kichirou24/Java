@@ -1,0 +1,8 @@
+cntt1|Nguyen Huu Hung|5.5|7.5
+cntt2|Nguyen Thi Hung|5.5|3.5
+cntt3|Ngo Huu Hung|2.5|3.5
+cntt4|Nguyen Van Thao|9.5|7.5
+cntt5|Tran Thi Lung|8.5|7.5
+toan1|Pham Van Thong|8.5|7.5|9.5
+toan2|Le Van Thong|1.5|2.5|3.5
+ly01|Trang Thi Lung|8.5|7.5|9.5|10.0
