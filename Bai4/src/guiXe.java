@@ -16,12 +16,10 @@ public class guiXe {
 				if (st == "" || st == null) break;
 				String[] ds = st.split("[;]");
 			}
-			
+			f.close();
 		} catch (Exception e)
 		{
 			System.out.println("Errrorrrrr doc" + e.getMessage());
 		}
-		
-		
 	}
 }
