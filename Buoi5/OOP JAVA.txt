@@ -1,0 +1,15 @@
+Class KhachHang
+
+Quản lý bằng cách cho vào mảng ArrayList
+
+ArrayList<KhachHang> ds = new ArrayList<KhachHang>();
+// Thêm 1 đối tượng vào lớp
+ds.add(kh1);
+ds.add(kh2);
+ds.add(kh3);
+
+Tạo 1 source folder -> new package -> class
+
+chuột phải -> source -> generater get set -> tạo hàm get set tự động
+chuột phải -> source -> generater constructor from superclass
+chuột phải -> source -> generater constructor using fields
