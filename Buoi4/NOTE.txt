@@ -1,0 +1,9 @@
+Tạo bảng: 
+JTabbedPane (Containers) -> JScrollPande vào giữa (Containers) -> JTable
+
+
+ADD: Them lan 2 thi k them
+DELETE: xoa 
+UPDATE: nhap xong update
+FIND: tim theo ten
+SAVE: dua ve lai hang.txt
