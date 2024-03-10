@@ -25,5 +25,7 @@ public class vd3 {
 		}
 		
 		System.out.println("Ten: " + ht.substring(j + 1)); // ht[j + 1, ...]
+		
+		nhap.close();
 	}
 }

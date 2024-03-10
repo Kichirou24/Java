@@ -13,5 +13,7 @@ public class vd4 {
 			if (ht.trim().toLowerCase().contains(key.trim().toLowerCase()) == true)
 				System.out.println(ht);
 		}
+		
+		nhap.close();
 	}
 }

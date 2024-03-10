@@ -43,6 +43,7 @@ public class bt1 {
 			}
 			  
 			System.out.println("So tien gui xe la: " + TienGui);
+			nhap.close();
 		  } catch(Exception e){
 		}
 		

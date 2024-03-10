@@ -29,6 +29,8 @@ public class vd5 {
 			}
 		}
 		System.out.println("So luong sinh vien cua khoa " + key + " la: " + count);
+		
+		nhap.close();
 	}
 
 }
