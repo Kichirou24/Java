@@ -1,0 +1,19 @@
+bean (Định nghĩa kiểu)
+dao: data access object (Truy xuất dữ liệu / Lấy dữ liệu về bộ nhớ và gửi dữ liệu lên)
+bo: buisiness object (Các chức năng / Xử lý dữ liệu)
+view: (Hiển thị)
+
+
+
+
+1. Tạo file ds.txt chứa các thông tin của Nguoi, SinhVien và NhanVien
+2. Mở lớp NhanVienbean thêm vào 2 trường email, sdt
+3. Mở Nguoidao vào hàm getds sửa lại:
+- Đọc file ds.txt và lưu vào mảng ds các dòng hợp lệ, nếu dòng không hợp lệ thì lưu dòng này vào file loi.txt
+Dòng hợp lệ là dòng:
+- Đối tượng phải đủ 3 (Người)| 6 (Sinh viên)| 7 (Nhân viên) thông tin.
+- Email, số điện thoại, ngày sinh (try catch) phải đúng
+- Mã sinh viên, mã nhân viên không bắt đầu bằng số
+4. Tạo thêm NhanVienbo và viết các hàm:
+- getNV()
+- Tìm nhân viên theo họ tên: tìm tương đối
