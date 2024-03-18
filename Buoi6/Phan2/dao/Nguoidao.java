@@ -41,15 +41,19 @@ public class Nguoidao {
 					// Nguoi
 					ds.add(new Nguoibean(sp[0], Boolean.parseBoolean(sp[1]), sdf.parse(sp[2])));
 				else if (sp.length == 6)
+				{
 					// Sinh vien
+					if (!isValidId(sp[0]))
+						continue;
 					ds.add(new SinhVienbean(sp[0], sp[1], Boolean.parseBoolean(sp[2]), sdf.parse(sp[3]), sp[3], Double.parseDouble(sp[5])));
+				}
 				else if (sp.length == 7)
 				{
 					// Nhan vien
 					// Check isValid
 					String email = sp[5];
 					String phone = sp[6];
-					if (!isValidEmail(email) || !isValidPhone(phone))
+					if (!isValidEmail(email) || !isValidPhone(phone) || !isValidId(sp[0]))
 						continue;
 					ds.add(new NhanVienbean(sp[0], sp[1], Boolean.parseBoolean(sp[2]), sdf.parse(sp[3]), Double.parseDouble(sp[4]), sp[5], sp[6]));
 				}
@@ -80,12 +84,20 @@ public class Nguoidao {
 	}
 	
 	public boolean isValidPhone(String phone) {
-		return false;
+		Pattern pt = Pattern.compile("(0|\\+84)\\d{9,10}");
+		Matcher mc = pt.matcher(phone);
+		return mc.find();
 	}
 	
 	public boolean isValidEmail(String email) {
 		Pattern pt = Pattern.compile("(\\w+)@(\\w+.)(\\w+.){2,}");
 		Matcher mc = pt.matcher(email);
+		return mc.find();
+	}
+	
+	public boolean isValidId(String id) {
+		Pattern pt = Pattern.compile("^[a-zA-Z]");
+		Matcher mc = pt.matcher(id);
 		return mc.find();
 	}
 	
