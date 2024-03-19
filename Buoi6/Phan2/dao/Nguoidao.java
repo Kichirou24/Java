@@ -137,7 +137,7 @@ public class Nguoidao {
 	public void SaveError(String str) {
 		try {
 			FileWriter f = new FileWriter("loi.txt", true);
-			PrintWriter w = new PrintWrite(f);
+			PrintWriter w = new PrintWriter(f);
 			w.println(str);
 			w.close();
 		} catch (Exception e) {
