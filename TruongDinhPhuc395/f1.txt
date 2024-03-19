@@ -1,0 +1,3 @@
+sv1;Truong Dinh Phuc;Sun Apr 24 00:00:00 ICT 2005;8.0;Dat;Khong Dat
+sv2;Nguyen Thanh Nhan;Wed May 05 00:00:00 ICT 2004;8.5;Dat;Khong Dat
+sv3;Luong Viet Hung;Sat Sep 11 00:00:00 ICT 2004;9.3;Khong Dat;Khong Dat

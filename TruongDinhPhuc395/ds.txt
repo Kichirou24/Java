@@ -1,0 +1,5 @@
+sv1,Truong Dinh Phuc,24/04/2005,8.0,true, false
+sv2,Nguyen Thanh Nhan,05/05/2004,8.5,true, true
+sv3,Luong Viet Hung,11/09/2004,9.3,false, true
+sv4,Nguyen To Linh,02/06/2004,6.5, false
+sv5,Ngo Bach,01/09/2004,7.7,true, true, true
