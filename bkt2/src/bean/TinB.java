@@ -6,7 +6,7 @@ public class TinB {
 	private Double diemExcel;
 	private Double diemPowerpoint;
 	private Double diemWeb;
-	private Double diemTB;
+	private Double diemTB;	
 	public String getMaSV() {
 		return maSV;
 	}
