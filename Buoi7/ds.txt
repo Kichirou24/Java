@@ -1,0 +1,6 @@
+Hung;true;10/12/2004
+Nga;false;05/02/2003
+sv1;Anh;false;01/06/2000;K46;6.5
+sv2;Huy;true;05/05/1999;K46;9.0
+nv1;Tien;true;17/04/1999;3.5;Tienbip@gmail.com;0987654321
+nv2;Thu;false;10/7/2008;3.0;Thudieu@gmail.com;0123456789

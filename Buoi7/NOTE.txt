@@ -1,0 +1,5 @@
+1. Them vao 1 nhanvien
+2. Tim kiem nhanvien theo hoten (tuong doi) (LIKE)
+3. Nang hsl len 2 cho 1 nhanvien nao do
+4. Tinh TBC cua hsl
+5. Tao bang SinhVien -> hien thi all sinhvien
