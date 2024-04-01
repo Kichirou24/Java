@@ -13,7 +13,7 @@ public class Nguoibo {
 	ArrayList<Nguoibean> ds;
 	
 	public ArrayList<Nguoibean> getDS() throws Exception{
-		ds = ndao.getDS();
+		ds = ndao.get();
 		return ds;
 	}
 	

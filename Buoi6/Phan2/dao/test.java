@@ -29,9 +29,9 @@ public class test {
 			
 			// Tao 2 nhan vien
 			String ngay3 = "17/04/1999";
-			NhanVienbean nv1 = new NhanVienbean("nv1", "Tien", true, date.parse(ngay3), 3.5);
+			NhanVienbean nv1 = new NhanVienbean("nv1", "Tien", true, date.parse(ngay3), 3.5, "Tienbip@gmail.com", "0987654321");
 			String ngay4 = "10/07/2008";
-			NhanVienbean nv2 = new NhanVienbean("nv2", "Thu", false, date.parse(ngay4), 3.0);
+			NhanVienbean nv2 = new NhanVienbean("nv2", "Thu", false, date.parse(ngay4), 3.0, "Thudieu@gmail.com", "0123456789");
 			
 			ds.add(ng1);
 			ds.add(ng2);
