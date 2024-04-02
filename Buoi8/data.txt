@@ -1,0 +1,5 @@
+m1,Nguyễn Thị Lan Anh,1,30/6/2002,7.8,example1@gmail.com,0901234567
+m2,Trần Văn Bình,0,15/9/2003,6.5,example2@gmail.com,0912345678
+m3,Lê Thị Hương,1,5/12/2004,8.2,example3@gmail.com,0923456789
+m4,Phạm Văn Dũng,0,20/3/2005,9.0,example4@gmail.com,0934567890
+m5,Hoàng Thị Mai,1,10/8/2001,7.3,example5@gmail.com,0945678901
