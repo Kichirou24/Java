@@ -52,7 +52,7 @@ public class Nguoibean {
 	public String toString() {
 		try {
 			String ngay = date.format(ngaySinh);
-			return hoTen + ";" + (gioiTinh == true ? "Nam" : "Nu") + ";" + ngay + ";" + getTuoi();			
+			return hoTen + ";" + (gioiTinh == true ? "Nam" : "Nu") + ";" + ngay;			
 		} catch (Exception e) {
 			e.printStackTrace();
 			return "";

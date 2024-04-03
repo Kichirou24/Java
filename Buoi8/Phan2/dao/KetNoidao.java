@@ -16,7 +16,7 @@ public class KetNoidao {
 		
 		Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
 		// b2: Ket noi CSDL
-		String st = "jdbc:sqlserver://LAB403-25:1433;databaseName=Nhom2;user=sa;password=123";
+		String st = "jdbc:sqlserver://KICHIROU\\SQLEXPRESS:1433;databaseName=Nhom2;user=sa;password=1234";
 		cn = DriverManager.getConnection(st);
 	}
 

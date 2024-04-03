@@ -21,22 +21,21 @@ public class NhanVienbo {
 		return ds;
 	}
 	
+	public int insert(String maNV, String hoTen, boolean gioiTinh, Date ngaySinh, Double hSL, String email, String phone) throws Exception {
+		for (NhanVienbean nv : ds)
+			if (nv.getMaNV().equals(maNV))
+				return 0;
+		ds.add(new NhanVienbean(maNV, hoTen, gioiTinh, ngaySinh, hSL, email, phone));
+		return nvdao.insertNV(maNV, hoTen, gioiTinh, ngaySinh, hSL, email, phone);
+	}
+	
 	public int delete(String manv) throws Exception {
+		
 		return nvdao.deleteNV(manv);
 	}
 	
 	public int update(String manv, Double hsl) throws Exception{
 		return nvdao.updateNV(manv, hsl);
-	}
-	
-	public int insert(String maNV, String hoTen, boolean gioiTinh, Date ngaySinh, Double hSL, String email, String phone) throws Exception {
-		for (NhanVienbean nv : ds)
-			if (nv.getMaNV().equals(maNV))
-			{
-				System.out.println("Nhan vien " + maNV + " da ton tai");
-				return 0;
-			}
-		return nvdao.insertNV(maNV, hoTen, gioiTinh, ngaySinh, hSL, email, phone);
 	}
 	
 	public void save(String tf) throws Exception{
