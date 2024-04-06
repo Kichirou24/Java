@@ -9,8 +9,6 @@ import java.util.ArrayList;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-import com.sun.xml.internal.bind.v2.runtime.unmarshaller.XsiNilLoader.Array;
-
 import bean.Nguoibean;
 import bean.NhanVienbean;
 import bean.SinhVienbean;
