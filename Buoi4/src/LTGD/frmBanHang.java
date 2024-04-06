@@ -6,8 +6,6 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
-import com.ibm.icu.text.SimpleDateFormat;
-
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 
@@ -23,6 +21,7 @@ import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.PrintWriter;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.awt.event.ItemListener;
