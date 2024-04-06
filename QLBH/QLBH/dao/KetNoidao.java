@@ -7,7 +7,7 @@ public class KetNoidao {
 	public Connection cn;
 	public void KetNoi() throws Exception {
 		Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
-		String st = "jdbc:sqlserver://KICHIROU\\SQLEXPRESS:1433;databaseName=BaiTap;user=sa;password=1234";
+		String st = "jdbc:sqlserver://KICHIROU\\SQLEXPRESS:1433;databaseName=QLBH;user=sa;password=1234";
 		cn = DriverManager.getConnection(st);
 	}
 }

@@ -8,6 +8,7 @@ import java.util.Date;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 
+import bean.Accountbean;
 import bean.Hangbean;
 
 public class Hangdao {	
@@ -105,16 +106,11 @@ public class Hangdao {
 		KetNoidao kn = new KetNoidao();
 		kn.KetNoi();
 		
-		String sql = "UPDATE Hang SET tenhang = ?, ngaynhaphang = ?, soluong = ?, gia = ? WHERE mahang = ?";
+		String sql = "UPDATE Hang SET soluong = ? WHERE mahang = ?";
 		PreparedStatement cmd = kn.cn.prepareStatement(sql);
 		
-		cmd.setString(1, tenHang);
-		cmd.setDate(2, new java.sql.Date(ngayNhapHang.getTime()));
-		cmd.setInt(3, soLuong);
-		cmd.setDouble(4, gia);
-		cmd.setString(5, maHang);
-		
-		
+		cmd.setInt(1, soLuong);
+		cmd.setString(2, maHang);
 		
 		int kq = cmd.executeUpdate();
 		cmd.close();

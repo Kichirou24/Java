@@ -14,6 +14,9 @@ import java.awt.event.ActionEvent;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.awt.event.ActionListener;
+import javax.swing.JButton;
+import javax.swing.JLabel;
+import java.awt.Font;
 
 public class frmMenu extends JFrame {
 
@@ -41,46 +44,32 @@ public class frmMenu extends JFrame {
 	 */
 	public frmMenu() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 450, 300);
-		
-		JMenuBar menuBar = new JMenuBar();
-		setJMenuBar(menuBar);
-		
-		JMenu mnNewMenu_1 = new JMenu("He Thong");
-		menuBar.add(mnNewMenu_1);
-		
-		JMenuItem mntmNewMenuItem_2 = new JMenuItem("Thoat");
-		mntmNewMenuItem_2.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				System.exit(1);
-			}
-		});
-		mnNewMenu_1.add(mntmNewMenuItem_2);
-		
-		JMenu mnNewMenu = new JMenu("Phan Mem");
-		menuBar.add(mnNewMenu);
-		
-		JMenuItem mntmNewMenuItem = new JMenuItem("Quan Ly Ban Hang");
-		mntmNewMenuItem.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				frmQLBHview qlbh = new frmQLBHview();
-				qlbh.setVisible(true);
-			}
-		});
-		mnNewMenu.add(mntmNewMenuItem);
-		
-		JMenuItem mntmNewMenuItem_1 = new JMenuItem("Ban Hang");
-		mntmNewMenuItem_1.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				frmBanHangview bh = new frmBanHangview();
-				bh.setVisible(true);
-			}
-		});
-		mnNewMenu.add(mntmNewMenuItem_1);
+		setBounds(100, 100, 386, 238);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
+		
+		JButton btNhanVien = new JButton("NhanVien");
+		btNhanVien.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+			}
+		});
+		btNhanVien.setBounds(49, 76, 97, 21);
+		contentPane.add(btNhanVien);
+		
+		JButton btQuanLy = new JButton("QuanLy");
+		btQuanLy.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+			}
+		});
+		btQuanLy.setBounds(223, 76, 97, 21);
+		contentPane.add(btQuanLy);
+		
+		JLabel lblNewLabel = new JLabel("Ban la ai ?");
+		lblNewLabel.setFont(new Font("Tahoma", Font.PLAIN, 16));
+		lblNewLabel.setBounds(153, 39, 85, 29);
+		contentPane.add(lblNewLabel);
 	}
 }
