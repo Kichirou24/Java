@@ -86,7 +86,6 @@ public class NhanViendao {
 		cmd.setDouble(5, hSL);
 		cmd.setString(6, email);
 		cmd.setString(7, phone);
-		
 		int kq = cmd.executeUpdate();
 		cmd.close();
 		kn.cn.close();
