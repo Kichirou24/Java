@@ -27,4 +27,8 @@ public class BanHangbo {
 	{
 		return bhdao.insert(maHang, tenHang, ngayMua, soLuongMua, gia);
 	}
+	public Double getThanhTien(ArrayList<BanHangbean> dsBH)
+	{
+		return bhdao.getThanhTien(dsBH);
+	}
 }

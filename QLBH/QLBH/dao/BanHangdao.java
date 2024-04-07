@@ -131,4 +131,14 @@ public class BanHangdao {
 		kn.cn.close();
 		return kq;
 	}
+	public Double getThanhTien(ArrayList<BanHangbean> dsBH) {
+		Double thanhTien = 0.0;
+		
+		for (BanHangbean bh : dsBH)
+		{
+			thanhTien += (bh.getGia() * bh.getSoLuongMua());
+		}
+		
+		return thanhTien;
+	}
 }

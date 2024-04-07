@@ -43,7 +43,7 @@ public class frmLogin extends JFrame {
 			}
 		});
 	}
-
+	
 	/**
 	 * Create the frame.
 	 */

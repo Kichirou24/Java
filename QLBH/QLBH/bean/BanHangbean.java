@@ -33,9 +33,6 @@ public class BanHangbean extends Hangbean {
 	public void setSoLuongMua(Integer soLuongMua) {
 		this.soLuongMua = soLuongMua;
 	}
-	public Double getThanhTien() {
-		return super.getGia() * soLuongMua;
-	}
 	
 	@Override
 	public String toString() {

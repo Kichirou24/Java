@@ -275,7 +275,7 @@ public class frmQLBHview extends JFrame {
 	
 	public void Buy() throws Exception
 	{
-		int confirm = JOptionPane.showConfirmDialog(null, "Xac nhan hoa don?");
+		int confirm = JOptionPane.showConfirmDialog(null, "Tong tien cua hoa don\n" + bhbo.getThanhTien(dsBH));
 		if (confirm == 0)
 		{
 			try {
@@ -288,9 +288,9 @@ public class frmQLBHview extends JFrame {
 			} catch (Exception e2) {
 				e2.printStackTrace();
 			}
+			ArrayList<BanHangbean> temp = new ArrayList<BanHangbean>();
+			updateTable2(temp);
 		}
-		ArrayList<BanHangbean> temp = new ArrayList<BanHangbean>();
-		updateTable2(temp);
 	}
 	/**
 	 * Create the frame.
