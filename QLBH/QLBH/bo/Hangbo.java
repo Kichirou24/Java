@@ -17,6 +17,11 @@ public class Hangbo {
 		return ds;
 	}
 	
+	public void upload() throws Exception 
+	{
+		hdao.upload();
+	}
+	
 	public int insert(String maHang, String tenHang, Date ngayNhapHang, Integer soLuong, Double gia) throws Exception{
 		for (Hangbean h : ds)
 			if (h.getMaHang().equals(maHang))

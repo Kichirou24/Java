@@ -25,6 +25,8 @@ import java.util.Date;
 import java.awt.event.ActionEvent;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
+import java.io.FileWriter;
+import java.io.PrintWriter;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import javax.swing.JScrollPane;
@@ -241,12 +243,13 @@ public class frmQLBHview extends JFrame {
 			}
 			
 			Integer soluongmua = Integer.parseInt(JOptionPane.showInputDialog("Nhap so luong mua"));
+			
 			Double gia = Double.parseDouble(txtGia.getText());
 			
 			BanHangbean bh = new BanHangbean(maHang, tenHang, ngayMua, soluongmua, gia);
 			Boolean ADD = false;
 			for (BanHangbean b : dsBH) {
-				if (b.getMaHang().trim().equals(maHang))
+				if (b.getMaHang().trim().equals(maHang.trim()))
 				{
 					if (checkSoLuong(maHang, soluongmua) == true)
 					{
@@ -290,6 +293,33 @@ public class frmQLBHview extends JFrame {
 			}
 			ArrayList<BanHangbean> temp = new ArrayList<BanHangbean>();
 			updateTable2(temp);
+			hbo.upload();
+		}
+	}
+	
+	public void Remove() throws Exception
+	{
+		int confirm = JOptionPane.showConfirmDialog(null, "Ban co chac la muon xoa mat hang nay khoi don hang khong?");
+		if (confirm == 0)
+		{
+			for (BanHangbean bh : dsBH)
+			{
+				if (bh.getMaHang().trim().equals(txtMaHang.getText().trim()))
+				{
+					for (Hangbean h : ds)
+					{
+						if (h.getMaHang().trim().equals(txtMaHang.getText().trim()))
+						{
+							dsBH.remove(bh);
+							h.setSoLuong(h.getSoLuong() + Integer.parseInt(txtSoLuong.getText()));
+							updateTable(ds);
+							updateTable2(dsBH);
+							bhbo.addnull();
+							return;
+						}
+					}
+				}
+			}
 		}
 	}
 	/**
@@ -308,6 +338,15 @@ public class frmQLBHview extends JFrame {
 					e2.printStackTrace();
 				}
 			}
+			@Override
+			public void windowClosed(WindowEvent e) {
+				try {
+					bhbo.addnull();
+				} catch (Exception e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}
+			}
 		});
 		setTitle(frmLogin.Fullname);
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
@@ -319,11 +358,11 @@ public class frmQLBHview extends JFrame {
 		contentPane.setLayout(null);
 		
 		JTabbedPane tabbedPane = new JTabbedPane(JTabbedPane.TOP);
-		tabbedPane.setBounds(10, 127, 457, 238);
+		tabbedPane.setBounds(10, 146, 457, 296);
 		contentPane.add(tabbedPane);
 		
 		JTabbedPane tabbedPane_1 = new JTabbedPane(JTabbedPane.TOP);
-		tabbedPane_1.setBounds(477, 127, 493, 238);
+		tabbedPane_1.setBounds(477, 145, 493, 297);
 		contentPane.add(tabbedPane_1);
 		
 		JScrollPane scrollPane = new JScrollPane();
@@ -355,23 +394,23 @@ public class frmQLBHview extends JFrame {
 		txtMaHang.setColumns(10);
 		
 		txtTenHang = new JTextField();
-		txtTenHang.setColumns(10);
 		txtTenHang.setBounds(98, 48, 135, 19);
+		txtTenHang.setColumns(10);
 		contentPane.add(txtTenHang);
 		
 		txtNgayNhapHang = new JTextField();
-		txtNgayNhapHang.setColumns(10);
 		txtNgayNhapHang.setBounds(98, 71, 135, 19);
+		txtNgayNhapHang.setColumns(10);
 		contentPane.add(txtNgayNhapHang);
 		
 		txtSoLuong = new JTextField();
-		txtSoLuong.setColumns(10);
 		txtSoLuong.setBounds(312, 25, 135, 19);
+		txtSoLuong.setColumns(10);
 		contentPane.add(txtSoLuong);
 		
 		txtGia = new JTextField();
-		txtGia.setColumns(10);
 		txtGia.setBounds(312, 48, 135, 19);
+		txtGia.setColumns(10);
 		contentPane.add(txtGia);
 
 		TonKho = new JTable();
@@ -397,51 +436,52 @@ public class frmQLBHview extends JFrame {
 		
 		
 		JButton btnNewButton = new JButton("Insert");
+		btnNewButton.setBounds(9, 104, 85, 21);
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				insert();
 			}
 		});
-		btnNewButton.setBounds(243, 70, 85, 21);
 		contentPane.add(btnNewButton);
 		
 		JButton btnInsert = new JButton("Delete");
+		btnInsert.setBounds(126, 104, 85, 21);
 		btnInsert.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				delete();
 			}
 		});
-		btnInsert.setBounds(338, 70, 85, 21);
 		contentPane.add(btnInsert);
 		
 		JButton btnUpdate = new JButton("Update");
+		btnUpdate.setBounds(234, 104, 85, 21);
 		btnUpdate.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				update();
 			}
 		});
-		btnUpdate.setBounds(433, 70, 85, 21);
 		contentPane.add(btnUpdate);
 		
 		JButton btnFind = new JButton("Find");
+		btnFind.setBounds(349, 103, 85, 21);
 		btnFind.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				find();
 			}
 		});
-		btnFind.setBounds(528, 70, 85, 21);
 		contentPane.add(btnFind);
 		
 		JButton btnLoad = new JButton("Load");
+		btnLoad.setBounds(465, 24, 81, 40);
 		btnLoad.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				load();
 			}
 		});
-		btnLoad.setBounds(457, 28, 90, 40);
 		contentPane.add(btnLoad);
 		
 		JButton btnNewButton_1 = new JButton("Add");
+		btnNewButton_1.setBounds(478, 103, 85, 21);
 		btnNewButton_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e){
 				try {
@@ -453,6 +493,7 @@ public class frmQLBHview extends JFrame {
 		});
 		
 		JButton btnBuy = new JButton("Buy");
+		btnBuy.setBounds(668, 104, 85, 21);
 		btnBuy.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				try {
@@ -462,10 +503,21 @@ public class frmQLBHview extends JFrame {
 				}
 			}
 		});
-		btnNewButton_1.setBounds(477, 96, 85, 21);
 		contentPane.add(btnNewButton_1);
-		
-		btnBuy.setBounds(577, 96, 85, 21);
 		contentPane.add(btnBuy);
+		
+		JButton btnRemove = new JButton("Remove");
+		btnRemove.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				try {
+					Remove();
+				} catch (Exception e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}
+			}
+		});
+		btnRemove.setBounds(573, 104, 85, 21);
+		contentPane.add(btnRemove);
 	}
 }

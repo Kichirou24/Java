@@ -4,7 +4,6 @@ import java.util.ArrayList;
 import java.util.Date;
 
 import bean.BanHangbean;
-import bean.Hangbean;
 import dao.BanHangdao;
 import dao.Hangdao;
 
@@ -13,7 +12,7 @@ public class BanHangbo {
 	Hangdao hdao = new Hangdao();
 	ArrayList<BanHangbean> ds = new ArrayList<BanHangbean>();
 	public ArrayList<BanHangbean> getHang() throws Exception{
-		//ds = hdao.getHang();
+		//ds = bhdao.getHang();
 		ds = bhdao.load();
 		return ds;
 	}
@@ -21,6 +20,10 @@ public class BanHangbo {
 	public void add(BanHangbean bh) throws Exception
 	{
 		bhdao.add(bh);
+	}
+	
+	public void addnull() throws Exception {
+		bhdao.addnull();
 	}
 	
 	public int insert(String maHang, String tenHang, Date ngayMua, Integer soLuongMua, Double gia) throws Exception

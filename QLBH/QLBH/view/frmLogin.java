@@ -48,7 +48,7 @@ public class frmLogin extends JFrame {
 	 * Create the frame.
 	 */
 	public frmLogin() {
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		setBounds(100, 100, 314, 291);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
@@ -72,7 +72,9 @@ public class frmLogin extends JFrame {
 					if (abo.check(username, password) == true)
 					{
 						frmQLBHview qlbh = new frmQLBHview();
+						frmLogin login = new frmLogin();
 						qlbh.setVisible(true);
+						login.setVisible(false);
 					}
 					else
 					{

@@ -1,0 +1,10 @@
+mh1;Tam tre;1000;5.0000
+mh2;Chan bong;100;1500.0000
+mh3;Nuoc hoa;150;1200.0000
+mh4;Sua tuoi;200;50.0000
+mh5;Sua bot;200;100.0000
+mh6;Mi tom;500;6.0000
+mh7;Xa phong;300;15.0000
+mh8;Ao nam;400;80.0000
+mh9;Quan;300;200.0000
+mh10;Vay;200;300.0000

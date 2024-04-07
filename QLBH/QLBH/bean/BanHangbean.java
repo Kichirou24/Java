@@ -7,9 +7,7 @@ public class BanHangbean extends Hangbean {
 	private Date ngayMua;
 	private Integer soLuongMua;
 	
-	SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
-	
-	
+	SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");	
 	public BanHangbean(String maHang, String tenHang, Date ngayMua, Integer soLuongMua, Double gia) {
 //		super(maHang, tenHang, gia);
 		super.setMaHang(maHang);

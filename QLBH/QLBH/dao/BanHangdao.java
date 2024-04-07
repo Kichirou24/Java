@@ -21,7 +21,7 @@ public class BanHangdao {
 			KetNoidao kn = new KetNoidao();
 			kn.KetNoi();
 			
-			String sql = "SELECT * FROM LSBanHang";
+			String sql = "SELECT * FROM HoaDon";
 			PreparedStatement cmd = kn.cn.prepareStatement(sql);
 			ResultSet rs = cmd.executeQuery();
 			while (rs.next())
@@ -44,36 +44,16 @@ public class BanHangdao {
 	
 	public void add(BanHangbean bh) throws Exception
 	{
-		/*
-		ArrayList<BanHangbean> ds = new ArrayList<BanHangbean>();
-		FileReader fr = new FileReader("donhang.txt");
-		BufferedReader r = new BufferedReader(fr);
-		
-		while(true)
-		{
-			String st = r.readLine();
-			if (st == null || st == "")
-				break;
-			String[] sp = st.split("[;]");
-			String maHang = sp[0];
-			String tenHang = sp[1];
-			Date ngayMua = sdf.parse(sp[2]);
-			Integer soLuongMua = Integer.parseInt(sp[3]);
-			Double gia = Double.parseDouble(sp[4]);
-			BanHangbean b;
-			if (maHang.trim() == bh.getMaHang().trim())
-				b = new BanHangbean(maHang, tenHang, ngayMua, soLuongMua + bh.getSoLuongMua(), gia);
-			else
-				b = new BanHangbean(maHang, tenHang, ngayMua, soLuongMua, gia);
-			ds.add(b);
-		}
-		r.close();
-		*/
-			
+		FileWriter fw = new FileWriter("donhang.txt", true);
+		PrintWriter w = new PrintWriter(fw);
+		w.println(bh.toString());
+		w.close();
+	}
+	
+	public void addnull() throws Exception
+	{
 		FileWriter fw = new FileWriter("donhang.txt");
 		PrintWriter w = new PrintWriter(fw);
-		
-		w.println(bh.toString());
 		w.close();
 	}
 	
@@ -99,10 +79,18 @@ public class BanHangdao {
 				Integer soLuongMua = Integer.parseInt(sp[3]);
 				Double gia = Double.parseDouble(sp[4]);
 				
+				Boolean update = false;
+				
 				for (BanHangbean bh : ds)
-					if (bh.getMaHang().equals(maHang))
-						
-				ds.add(new BanHangbean(maHang, tenHang, ngayMua, soLuongMua, gia));
+				{
+					if (bh.getMaHang().trim().equals(maHang.trim()))
+					{
+						bh.setSoLuongMua(bh.getSoLuongMua() + soLuongMua);
+						update = true;
+					}
+				}
+				if (update == false)
+					ds.add(new BanHangbean(maHang, tenHang, ngayMua, soLuongMua, gia));
 			}
 			r.close();
 		} catch (Exception e) {
@@ -116,7 +104,7 @@ public class BanHangdao {
 		KetNoidao kn = new KetNoidao();
 		kn.KetNoi();
 		
-		String sql = "INSERT INTO LSBanHang (mahang, tenhang, ngaymua, soluongmua, gia) VALUES(?,?,?,?,?)";
+		String sql = "INSERT INTO HoaDon (mahang, tenhang, ngaymua, soluongmua, gia) VALUES(?,?,?,?,?)";
 		
 		PreparedStatement cmd = kn.cn.prepareStatement(sql);
 		

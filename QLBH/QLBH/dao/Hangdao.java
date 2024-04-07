@@ -8,7 +8,7 @@ import java.util.Date;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 
-import bean.Accountbean;
+import bean.BanHangbean;
 import bean.Hangbean;
 
 public class Hangdao {	
@@ -47,7 +47,7 @@ public class Hangdao {
 			KetNoidao kn = new KetNoidao();
 			kn.KetNoi();
 			
-			String sql = "SELECT * FROM Hang";
+			String sql = "SELECT * FROM HangHoa";
 			PreparedStatement cmd = kn.cn.prepareStatement(sql);
 			ResultSet rs = cmd.executeQuery();
 			while (rs.next())
@@ -68,12 +68,29 @@ public class Hangdao {
 		return ds;
 	}
 	
+	public void upload() throws Exception{
+		BanHangdao bhdao = new BanHangdao();
+		Hangdao hdao = new Hangdao();
+		
+		for (Hangbean h : hdao.load())
+		{
+			for (BanHangbean bh : bhdao.loadDS())
+			{
+				if (h.getMaHang().trim().equals(bh.getMaHang().trim()))
+				{
+					hdao.update(h.getMaHang(), h.getTenhang(), h.getNgayNhapHang(), h.getSoLuong() - bh.getSoLuongMua(), h.getGia());
+					continue;
+				}
+			}
+		}
+	}
+	
 	public int insert(String maHang, String tenHang, Date ngayNhapHang, Integer soLuong, Double gia) throws Exception
 	{
 		KetNoidao kn = new KetNoidao();
 		kn.KetNoi();
 		
-		String sql = "INSERT INTO Hang (mahang, tenhang, ngaynhaphang, soluong, gia) VALUES(?,?,?,?,?)";
+		String sql = "INSERT INTO HangHoa (mahang, tenhang, ngaynhaphang, soluong, gia) VALUES(?,?,?,?,?)";
 		
 		PreparedStatement cmd = kn.cn.prepareStatement(sql);
 		
@@ -93,7 +110,7 @@ public class Hangdao {
 		KetNoidao kn = new KetNoidao();
 		kn.KetNoi();
 		
-		String sql = "DELETE FROM Hang WHERE mahang=?";
+		String sql = "DELETE FROM HangHoa WHERE mahang=?";
 		PreparedStatement cmd = kn.cn.prepareStatement(sql);
 		cmd.setString(1, maHang);
 		int kq = cmd.executeUpdate();
@@ -106,7 +123,7 @@ public class Hangdao {
 		KetNoidao kn = new KetNoidao();
 		kn.KetNoi();
 		
-		String sql = "UPDATE Hang SET soluong = ? WHERE mahang = ?";
+		String sql = "UPDATE HangHoa SET soluong = ? WHERE mahang = ?";
 		PreparedStatement cmd = kn.cn.prepareStatement(sql);
 		
 		cmd.setInt(1, soLuong);
