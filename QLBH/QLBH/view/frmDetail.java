@@ -9,8 +9,8 @@ import javax.swing.table.DefaultTableModel;
 
 import dao.KetNoidao;
 
-import javax.swing.JScrollPane;
 import javax.swing.JTabbedPane;
+import javax.swing.JScrollPane;
 import javax.swing.JTable;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
@@ -18,21 +18,14 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
-import javax.swing.JButton;
-import java.awt.event.ActionListener;
-import java.awt.event.ActionEvent;
-import java.awt.event.MouseAdapter;
-import java.awt.event.MouseEvent;
-import javax.swing.JLabel;
-import javax.swing.JOptionPane;
-import javax.swing.JTextField;
+import java.util.Date;
 
-public class frmStatics extends JFrame {
+public class frmDetail extends JFrame {
 
 	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
-	private JTable DanhSach;
-	public static String thang;
+	private JTable ChiTiet;
+	frmStatics frmStatic = new frmStatics();
 
 	/**
 	 * Launch the application.
@@ -41,7 +34,7 @@ public class frmStatics extends JFrame {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					frmStatics frame = new frmStatics();
+					frmDetail frame = new frmDetail();
 					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -50,22 +43,34 @@ public class frmStatics extends JFrame {
 		});
 	}
 
-	public void load() throws Exception {
+	public void load() throws Exception
+	{
 		DefaultTableModel dtm = new DefaultTableModel();
-		dtm.addColumn("Thang");
-		dtm.addColumn("ThanhTien");
+		dtm.addColumn("sohoadon");
+		dtm.addColumn("mahang");
+		dtm.addColumn("tenhang");
+		dtm.addColumn("ngaymua");
+		dtm.addColumn("soluongmua");
+		dtm.addColumn("gia");
+		dtm.addColumn("thanhtien");
 		ArrayList<String> a = new ArrayList<String>();
 		try {
 			KetNoidao kn = new KetNoidao();
 			kn.KetNoi();
-			String sql = "SELECT MONTH(ngaymua) AS Thang, SUM(gia * soluongmua) AS ThanhTien FROM HoaDon GROUP BY MONTH(ngaymua)";
+			String sql = "SELECT * FROM HoaDon WHERE MONTH(ngaymua) = ?";
 			PreparedStatement cmd = kn.cn.prepareStatement(sql);
+			cmd.setString(1, frmStatics.thang);
 			ResultSet rs = cmd.executeQuery();
 			while (rs.next())
 			{
-				String Thang = rs.getString(1);
-				String ThanhTien = rs.getString(2);
-				a.add(Thang + ";" + ThanhTien);
+				Integer soHoaDon = rs.getInt(1);
+				String maHang = rs.getString(2);
+				String tenHang = rs.getString(3);
+				Date ngayMuaHang = rs.getDate(4);
+				Integer soLuongMua = rs.getInt(5);
+				Double gia = rs.getDouble(6);
+				Double thanhTien = gia * soLuongMua;
+				a.add(soHoaDon + ";" + maHang + ";" + tenHang + ";" + ngayMuaHang + ";" + soLuongMua + ";" + gia + ";" + thanhTien);
 			}
 		} catch (SQLException e) {
 			e.printStackTrace();
@@ -75,31 +80,28 @@ public class frmStatics extends JFrame {
 			String[] sp = h.split("[;]");
 			dtm.addRow(sp);
 		}
-		DanhSach.setModel(dtm);
-	}
-	
-	public void get() {
-		int id = DanhSach.getSelectedRow(); // lay dong vua chon
-		thang = DanhSach.getValueAt(id, 0).toString();	
+		ChiTiet.setModel(dtm);
+		
 	}
 	
 	/**
 	 * Create the frame.
 	 */
-	public frmStatics() {
+	public frmDetail() {
+		setTitle("Cac hoa don trong thang " + frmStatics.thang);
 		addWindowListener(new WindowAdapter() {
 			@Override
 			public void windowOpened(WindowEvent e) {
 				try {
 					load();
 				} catch (Exception e1) {
+					// TODO Auto-generated catch block
 					e1.printStackTrace();
 				}
 			}
 		});
-		setTitle(frmLogin.Fullname);
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-		setBounds(100, 100, 642, 342);
+		setBounds(100, 100, 571, 300);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 
@@ -107,34 +109,13 @@ public class frmStatics extends JFrame {
 		contentPane.setLayout(null);
 		
 		JTabbedPane tabbedPane = new JTabbedPane(JTabbedPane.TOP);
-		tabbedPane.setBounds(10, 40, 608, 255);
+		tabbedPane.setBounds(10, 31, 537, 222);
 		contentPane.add(tabbedPane);
-
-		DanhSach = new JTable();
-		JScrollPane scrollPane = new JScrollPane();
-		DanhSach.addMouseListener(new MouseAdapter() {
-			@Override
-			public void mouseClicked(MouseEvent e) {
-				get();
-			}
-		});
-		scrollPane.setViewportView(DanhSach);
-		tabbedPane.addTab("Danh sach", null, scrollPane, null);
 		
-		JButton btnDetail = new JButton("Detail");
-		btnDetail.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				try {
-					load();
-				} catch (Exception e1) {
-					// TODO Auto-generated catch block
-					e1.printStackTrace();
-				}
-				frmDetail detail = new frmDetail();
-				detail.setVisible(true);
-			}
-		});
-		btnDetail.setBounds(10, 9, 85, 21);
-		contentPane.add(btnDetail);
+		JScrollPane scrollPane = new JScrollPane();
+		tabbedPane.addTab("Danh sach chi tiet", null, scrollPane, null);
+		
+		ChiTiet = new JTable();
+		scrollPane.setViewportView(ChiTiet);
 	}
 }

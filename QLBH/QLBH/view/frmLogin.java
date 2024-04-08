@@ -48,7 +48,7 @@ public class frmLogin extends JFrame {
 	 * Create the frame.
 	 */
 	public frmLogin() {
-		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 314, 291);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
@@ -118,7 +118,7 @@ public class frmLogin extends JFrame {
 		
 		JLabel lblNewLabel_2 = new JLabel("LOGIN/REGISTER");
 		lblNewLabel_2.setFont(new Font("Tahoma", Font.PLAIN, 16));
-		lblNewLabel_2.setBounds(119, 10, 105, 31);
+		lblNewLabel_2.setBounds(105, 10, 185, 31);
 		contentPane.add(lblNewLabel_2);
 		
 		JLabel lblNewLabel = new JLabel("Username");

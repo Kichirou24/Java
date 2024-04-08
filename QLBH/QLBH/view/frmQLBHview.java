@@ -124,13 +124,8 @@ public class frmQLBHview extends JFrame {
 			Integer soLuong = Integer.parseInt(txtSoLuong.getText());
 			Double gia = Double.parseDouble(txtGia.getText());
 			
-			if (maHang.equals("") || tenHang.equals("") || ngayNhapHang.equals(null) || soLuong.equals(0) || gia.equals(0.0))
-			{
-				JOptionPane.showMessageDialog(null, "Vui long nhap day du thong tin");
-				return;
-			}
-			
 			Date nowDate = new Date();
+			
 			if (ngayNhapHang.getTime() > nowDate.getTime())
 			{
 				JOptionPane.showMessageDialog(null, "Ngay nhap hang vuot qua ngay hien tai, vui long nhap lai");
@@ -154,7 +149,7 @@ public class frmQLBHview extends JFrame {
 			ds.add(new Hangbean(maHang, tenHang, ngayNhapHang, soLuong, gia));
 			updateTable(ds);
 		} catch (Exception e2) {
-			e2.printStackTrace();
+			JOptionPane.showMessageDialog(null, "Vui long nhap day du thong tin");
 		}
 	}
 	
@@ -367,6 +362,7 @@ public class frmQLBHview extends JFrame {
 					if (confirm == 0)
 					{
 						hbo.upload();
+						JOptionPane.showMessageDialog(null, "Luu du lieu thanh cong");
 					}
 				} catch (Exception e1) {
 					e1.printStackTrace();
@@ -553,5 +549,23 @@ public class frmQLBHview extends JFrame {
 		});
 		btnStatics.setBounds(853, 104, 85, 21);
 		contentPane.add(btnStatics);
+		
+		JButton btnSave = new JButton("Save");
+		btnSave.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				try {
+					int confirm = JOptionPane.showConfirmDialog(null, "Ban co muon luu du lieu ? ");
+					if (confirm == 0)
+					{
+						hbo.upload();
+						JOptionPane.showMessageDialog(null, "Luu du lieu thanh cong");
+					}
+				} catch (Exception e2) {
+					e2.printStackTrace();
+				}
+			}
+		});
+		btnSave.setBounds(613, 28, 85, 40);
+		contentPane.add(btnSave);
 	}
 }

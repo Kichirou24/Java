@@ -24,7 +24,7 @@ public class Hangbo {
 	
 	public int insert(String maHang, String tenHang, Date ngayNhapHang, Integer soLuong, Double gia) throws Exception{
 		for (Hangbean h : ds)
-			if (h.getMaHang().equals(maHang))
+			if (h.getMaHang().trim().equals(maHang.trim()))
 				return 0;
 		ds.add(new Hangbean(maHang, tenHang, ngayNhapHang, soLuong, gia));
 		return hdao.insert(maHang, tenHang, ngayNhapHang, soLuong, gia);
