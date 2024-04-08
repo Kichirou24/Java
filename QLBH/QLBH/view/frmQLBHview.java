@@ -25,8 +25,6 @@ import java.util.Date;
 import java.awt.event.ActionEvent;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
-import java.io.FileWriter;
-import java.io.PrintWriter;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import javax.swing.JScrollPane;
@@ -83,7 +81,6 @@ public class frmQLBHview extends JFrame {
 			String[] sp = h.toString().split("[;]");
 			dtm.addRow(sp);
 		}
-		
 		TonKho.setModel(dtm);
 	}
 	
@@ -101,7 +98,6 @@ public class frmQLBHview extends JFrame {
 			String[] sp = h.toString().split("[;]");
 			dtm.addRow(sp);
 		}
-		
 		HoaDon.setModel(dtm);
 	}
 	
@@ -127,7 +123,26 @@ public class frmQLBHview extends JFrame {
 			Date ngayNhapHang = sdf.parse(txtNgayNhapHang.getText());
 			Integer soLuong = Integer.parseInt(txtSoLuong.getText());
 			Double gia = Double.parseDouble(txtGia.getText());
-
+			
+			if (maHang.equals("") || tenHang.equals("") || ngayNhapHang.equals(null) || soLuong.equals(0) || gia.equals(0.0))
+			{
+				JOptionPane.showMessageDialog(null, "Vui long nhap day du thong tin");
+				return;
+			}
+			
+			Date nowDate = new Date();
+			if (ngayNhapHang.getTime() > nowDate.getTime())
+			{
+				JOptionPane.showMessageDialog(null, "Ngay nhap hang vuot qua ngay hien tai, vui long nhap lai");
+				return;
+			}
+			
+			if (soLuong <= 0)
+			{
+				JOptionPane.showMessageDialog(null, "Vui long nhap so luong > 0");
+				return;
+			}
+			
 			int kq = hbo.insert(maHang, tenHang, ngayNhapHang, soLuong, gia);
 			
 			if (kq == 0)
@@ -244,6 +259,12 @@ public class frmQLBHview extends JFrame {
 			
 			Integer soluongmua = Integer.parseInt(JOptionPane.showInputDialog("Nhap so luong mua"));
 			
+			if (soluongmua <= 0)
+			{
+				JOptionPane.showMessageDialog(null, "Nhap so luong mua > 0");
+				return;
+			}
+			
 			Double gia = Double.parseDouble(txtGia.getText());
 			
 			BanHangbean bh = new BanHangbean(maHang, tenHang, ngayMua, soluongmua, gia);
@@ -339,16 +360,20 @@ public class frmQLBHview extends JFrame {
 				}
 			}
 			@Override
-			public void windowClosed(WindowEvent e) {
+			public void windowClosing(WindowEvent e) {
 				try {
 					bhbo.addnull();
+					int confirm = JOptionPane.showConfirmDialog(null, "Ban co muon luu du lieu ? ");
+					if (confirm == 0)
+					{
+						hbo.upload();
+					}
 				} catch (Exception e1) {
-					// TODO Auto-generated catch block
 					e1.printStackTrace();
 				}
 			}
 		});
-		setTitle(frmLogin.Fullname);
+		setTitle("Hello " + frmLogin.Fullname);
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		setBounds(100, 100, 994, 497);
 		contentPane = new JPanel();
@@ -369,47 +394,47 @@ public class frmQLBHview extends JFrame {
 		tabbedPane.addTab("Danh sach hang ton kho", null, scrollPane, null);
 		
 		JLabel lblNewLabel = new JLabel("Ma hang");
-		lblNewLabel.setBounds(10, 28, 78, 13);
+		lblNewLabel.setBounds(10, 28, 115, 13);
 		contentPane.add(lblNewLabel);
 		
 		JLabel lblNewLabel_1 = new JLabel("Ten hang");
-		lblNewLabel_1.setBounds(10, 51, 78, 13);
+		lblNewLabel_1.setBounds(10, 51, 115, 13);
 		contentPane.add(lblNewLabel_1);
 		
 		JLabel lblNewLabel_1_1 = new JLabel("Ngay nhap hang");
-		lblNewLabel_1_1.setBounds(10, 74, 78, 13);
+		lblNewLabel_1_1.setBounds(10, 74, 115, 13);
 		contentPane.add(lblNewLabel_1_1);
 		
 		JLabel lblNewLabel_2 = new JLabel("So luong");
-		lblNewLabel_2.setBounds(243, 28, 59, 13);
+		lblNewLabel_2.setBounds(300, 32, 59, 13);
 		contentPane.add(lblNewLabel_2);
 		
 		JLabel lblNewLabel_3 = new JLabel("Gia");
-		lblNewLabel_3.setBounds(243, 51, 59, 13);
+		lblNewLabel_3.setBounds(300, 55, 59, 13);
 		contentPane.add(lblNewLabel_3);
 		
 		txtMaHang = new JTextField();
-		txtMaHang.setBounds(98, 25, 135, 19);
+		txtMaHang.setBounds(135, 28, 155, 19);
 		contentPane.add(txtMaHang);
 		txtMaHang.setColumns(10);
 		
 		txtTenHang = new JTextField();
-		txtTenHang.setBounds(98, 48, 135, 19);
+		txtTenHang.setBounds(135, 51, 155, 19);
 		txtTenHang.setColumns(10);
 		contentPane.add(txtTenHang);
 		
 		txtNgayNhapHang = new JTextField();
-		txtNgayNhapHang.setBounds(98, 71, 135, 19);
+		txtNgayNhapHang.setBounds(135, 74, 155, 19);
 		txtNgayNhapHang.setColumns(10);
 		contentPane.add(txtNgayNhapHang);
 		
 		txtSoLuong = new JTextField();
-		txtSoLuong.setBounds(312, 25, 135, 19);
+		txtSoLuong.setBounds(369, 29, 135, 19);
 		txtSoLuong.setColumns(10);
 		contentPane.add(txtSoLuong);
 		
 		txtGia = new JTextField();
-		txtGia.setBounds(312, 48, 135, 19);
+		txtGia.setBounds(369, 52, 135, 19);
 		txtGia.setColumns(10);
 		contentPane.add(txtGia);
 
@@ -445,7 +470,7 @@ public class frmQLBHview extends JFrame {
 		contentPane.add(btnNewButton);
 		
 		JButton btnInsert = new JButton("Delete");
-		btnInsert.setBounds(126, 104, 85, 21);
+		btnInsert.setBounds(144, 104, 85, 21);
 		btnInsert.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				delete();
@@ -454,7 +479,7 @@ public class frmQLBHview extends JFrame {
 		contentPane.add(btnInsert);
 		
 		JButton btnUpdate = new JButton("Update");
-		btnUpdate.setBounds(234, 104, 85, 21);
+		btnUpdate.setBounds(261, 104, 85, 21);
 		btnUpdate.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				update();
@@ -463,7 +488,7 @@ public class frmQLBHview extends JFrame {
 		contentPane.add(btnUpdate);
 		
 		JButton btnFind = new JButton("Find");
-		btnFind.setBounds(349, 103, 85, 21);
+		btnFind.setBounds(382, 104, 85, 21);
 		btnFind.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				find();
@@ -472,7 +497,7 @@ public class frmQLBHview extends JFrame {
 		contentPane.add(btnFind);
 		
 		JButton btnLoad = new JButton("Load");
-		btnLoad.setBounds(465, 24, 81, 40);
+		btnLoad.setBounds(522, 28, 81, 40);
 		btnLoad.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				load();
@@ -481,7 +506,7 @@ public class frmQLBHview extends JFrame {
 		contentPane.add(btnLoad);
 		
 		JButton btnNewButton_1 = new JButton("Add");
-		btnNewButton_1.setBounds(478, 103, 85, 21);
+		btnNewButton_1.setBounds(488, 104, 85, 21);
 		btnNewButton_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e){
 				try {
@@ -493,7 +518,7 @@ public class frmQLBHview extends JFrame {
 		});
 		
 		JButton btnBuy = new JButton("Buy");
-		btnBuy.setBounds(668, 104, 85, 21);
+		btnBuy.setBounds(742, 104, 85, 21);
 		btnBuy.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				try {
@@ -512,12 +537,21 @@ public class frmQLBHview extends JFrame {
 				try {
 					Remove();
 				} catch (Exception e1) {
-					// TODO Auto-generated catch block
 					e1.printStackTrace();
 				}
 			}
 		});
-		btnRemove.setBounds(573, 104, 85, 21);
+		btnRemove.setBounds(615, 104, 85, 21);
 		contentPane.add(btnRemove);
+		
+		JButton btnStatics = new JButton("Staticts");
+		btnStatics.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				frmStatics statics = new frmStatics();
+				statics.setVisible(true);
+			}
+		});
+		btnStatics.setBounds(853, 104, 85, 21);
+		contentPane.add(btnStatics);
 	}
 }
