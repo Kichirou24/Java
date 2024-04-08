@@ -27,7 +27,7 @@ import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 
-public class frmStatics extends JFrame {
+public class frmStaticsview extends JFrame {
 
 	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
@@ -41,7 +41,7 @@ public class frmStatics extends JFrame {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					frmStatics frame = new frmStatics();
+					frmStaticsview frame = new frmStaticsview();
 					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -86,7 +86,7 @@ public class frmStatics extends JFrame {
 	/**
 	 * Create the frame.
 	 */
-	public frmStatics() {
+	public frmStaticsview() {
 		addWindowListener(new WindowAdapter() {
 			@Override
 			public void windowOpened(WindowEvent e) {
@@ -97,7 +97,7 @@ public class frmStatics extends JFrame {
 				}
 			}
 		});
-		setTitle(frmLogin.Fullname);
+		setTitle(frmLoginview.Fullname);
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		setBounds(100, 100, 642, 342);
 		contentPane = new JPanel();
@@ -130,7 +130,7 @@ public class frmStatics extends JFrame {
 					// TODO Auto-generated catch block
 					e1.printStackTrace();
 				}
-				frmDetail detail = new frmDetail();
+				frmDetailview detail = new frmDetailview();
 				detail.setVisible(true);
 			}
 		});

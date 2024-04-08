@@ -20,12 +20,12 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Date;
 
-public class frmDetail extends JFrame {
+public class frmDetailview extends JFrame {
 
 	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
 	private JTable ChiTiet;
-	frmStatics frmStatic = new frmStatics();
+	frmStaticsview frmStatic = new frmStaticsview();
 
 	/**
 	 * Launch the application.
@@ -34,7 +34,7 @@ public class frmDetail extends JFrame {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					frmDetail frame = new frmDetail();
+					frmDetailview frame = new frmDetailview();
 					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -59,7 +59,7 @@ public class frmDetail extends JFrame {
 			kn.KetNoi();
 			String sql = "SELECT * FROM HoaDon WHERE MONTH(ngaymua) = ?";
 			PreparedStatement cmd = kn.cn.prepareStatement(sql);
-			cmd.setString(1, frmStatics.thang);
+			cmd.setString(1, frmStaticsview.thang);
 			ResultSet rs = cmd.executeQuery();
 			while (rs.next())
 			{
@@ -87,8 +87,8 @@ public class frmDetail extends JFrame {
 	/**
 	 * Create the frame.
 	 */
-	public frmDetail() {
-		setTitle("Cac hoa don trong thang " + frmStatics.thang);
+	public frmDetailview() {
+		setTitle("Cac hoa don trong thang " + frmStaticsview.thang);
 		addWindowListener(new WindowAdapter() {
 			@Override
 			public void windowOpened(WindowEvent e) {

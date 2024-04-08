@@ -41,7 +41,7 @@ public class frmQLBHview extends JFrame {
 	private JTextField txtGia;
 	public Hangbo hbo = new Hangbo();
 	public BanHangbo bhbo = new BanHangbo();
-	public frmLogin login = new frmLogin();
+	public frmLoginview login = new frmLoginview();
 	public SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
 	ArrayList<Hangbean> ds = new ArrayList<Hangbean>();
 	public static ArrayList<BanHangbean> dsBH = new ArrayList<BanHangbean>();
@@ -369,7 +369,7 @@ public class frmQLBHview extends JFrame {
 				}
 			}
 		});
-		setTitle("Hello " + frmLogin.Fullname);
+		setTitle("Hello " + frmLoginview.Fullname);
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		setBounds(100, 100, 994, 497);
 		contentPane = new JPanel();
@@ -543,7 +543,7 @@ public class frmQLBHview extends JFrame {
 		JButton btnStatics = new JButton("Staticts");
 		btnStatics.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				frmStatics statics = new frmStatics();
+				frmStaticsview statics = new frmStaticsview();
 				statics.setVisible(true);
 			}
 		});
