@@ -140,7 +140,7 @@ public class frmStaticsview extends JFrame {
 				detail.setVisible(true);
 			}
 		});
-		btnDetail.setBounds(191, 9, 85, 21);
+		btnDetail.setBounds(255, 9, 85, 21);
 		contentPane.add(btnDetail);
 		
 		JLabel lblNewLabel = new JLabel("Ngay");
@@ -148,7 +148,7 @@ public class frmStaticsview extends JFrame {
 		contentPane.add(lblNewLabel);
 		
 		txtDate = new JTextField();
-		txtDate.setBounds(75, 10, 107, 19);
+		txtDate.setBounds(75, 10, 170, 19);
 		contentPane.add(txtDate);
 		txtDate.setColumns(10);
 	}
