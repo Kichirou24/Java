@@ -57,9 +57,9 @@ public class frmDetailview extends JFrame {
 		try {
 			KetNoidao kn = new KetNoidao();
 			kn.KetNoi();
-			String sql = "SELECT * FROM HoaDon WHERE MONTH(ngaymua) = ?";
+			String sql = "SELECT * FROM HoaDon WHERE ngaymua = ?";
 			PreparedStatement cmd = kn.cn.prepareStatement(sql);
-			cmd.setString(1, frmStaticsview.thang);
+			cmd.setString(1, frmStaticsview.date);
 			ResultSet rs = cmd.executeQuery();
 			while (rs.next())
 			{
@@ -88,14 +88,13 @@ public class frmDetailview extends JFrame {
 	 * Create the frame.
 	 */
 	public frmDetailview() {
-		setTitle("Cac hoa don trong thang " + frmStaticsview.thang);
+		setTitle("Cac hoa don trong thang " + frmStaticsview.date);
 		addWindowListener(new WindowAdapter() {
 			@Override
 			public void windowOpened(WindowEvent e) {
 				try {
 					load();
 				} catch (Exception e1) {
-					// TODO Auto-generated catch block
 					e1.printStackTrace();
 				}
 			}

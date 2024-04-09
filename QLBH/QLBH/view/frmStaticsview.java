@@ -17,7 +17,10 @@ import java.awt.event.WindowEvent;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
+
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
@@ -32,7 +35,9 @@ public class frmStaticsview extends JFrame {
 	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
 	private JTable DanhSach;
-	public static String thang;
+	public static String date;
+	private JTextField txtDate;
+	SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
 
 	/**
 	 * Launch the application.
@@ -58,7 +63,7 @@ public class frmStaticsview extends JFrame {
 		try {
 			KetNoidao kn = new KetNoidao();
 			kn.KetNoi();
-			String sql = "SELECT MONTH(ngaymua) AS Thang, SUM(gia * soluongmua) AS ThanhTien FROM HoaDon GROUP BY MONTH(ngaymua)";
+			String sql = "SELECT ngaymua, SUM(gia * soluongmua) AS ThanhTien FROM HoaDon GROUP BY ngaymua";
 			PreparedStatement cmd = kn.cn.prepareStatement(sql);
 			ResultSet rs = cmd.executeQuery();
 			while (rs.next())
@@ -80,7 +85,8 @@ public class frmStaticsview extends JFrame {
 	
 	public void get() {
 		int id = DanhSach.getSelectedRow(); // lay dong vua chon
-		thang = DanhSach.getValueAt(id, 0).toString();	
+		date = DanhSach.getValueAt(id, 0).toString();
+		txtDate.setText(date);
 	}
 	
 	/**
@@ -134,7 +140,16 @@ public class frmStaticsview extends JFrame {
 				detail.setVisible(true);
 			}
 		});
-		btnDetail.setBounds(10, 9, 85, 21);
+		btnDetail.setBounds(191, 9, 85, 21);
 		contentPane.add(btnDetail);
+		
+		JLabel lblNewLabel = new JLabel("Ngay");
+		lblNewLabel.setBounds(10, 13, 55, 13);
+		contentPane.add(lblNewLabel);
+		
+		txtDate = new JTextField();
+		txtDate.setBounds(75, 10, 107, 19);
+		contentPane.add(txtDate);
+		txtDate.setColumns(10);
 	}
 }
