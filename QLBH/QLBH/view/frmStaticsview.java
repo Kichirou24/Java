@@ -37,7 +37,7 @@ public class frmStaticsview extends JFrame {
 	private JTable DanhSach;
 	public static String date;
 	private JTextField txtDate;
-	SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
+	SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss");
 
 	/**
 	 * Launch the application.
@@ -83,10 +83,19 @@ public class frmStaticsview extends JFrame {
 		DanhSach.setModel(dtm);
 	}
 	
+	
 	public void get() {
-		int id = DanhSach.getSelectedRow(); // lay dong vua chon
-		date = DanhSach.getValueAt(id, 0).toString();
-		txtDate.setText(date);
+		try {
+			SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+			int id = DanhSach.getSelectedRow(); // lay dong vua chon
+			date = DanhSach.getValueAt(id, 0).toString();
+			Date d1 = sdf.parse(date);
+			date = sdf.format(d1);
+			txtDate.setText(sdf.format(d1));
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
 	}
 	
 	/**
@@ -133,7 +142,7 @@ public class frmStaticsview extends JFrame {
 				try {
 					load();
 				} catch (Exception e1) {
-					// TODO Auto-generated catch block
+
 					e1.printStackTrace();
 				}
 				frmDetailview detail = new frmDetailview();

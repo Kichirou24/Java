@@ -103,14 +103,14 @@ public class BanHangdao {
 	{
 		KetNoidao kn = new KetNoidao();
 		kn.KetNoi();
-		
+		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss");
 		String sql = "INSERT INTO HoaDon (mahang, tenhang, ngaymua, soluongmua, gia) VALUES(?,?,?,?,?)";
 		
 		PreparedStatement cmd = kn.cn.prepareStatement(sql);
-		
+		Date date = new Date();
 		cmd.setString(1, maHang);
 		cmd.setString(2, tenHang);
-		cmd.setDate(3, new java.sql.Date(ngayMua.getTime()));
+		cmd.setTimestamp(3, java.sql.Timestamp.valueOf(sdf.format(date)));
 		cmd.setInt(4, soLuongMua);
 		cmd.setDouble(5, gia);
 		
