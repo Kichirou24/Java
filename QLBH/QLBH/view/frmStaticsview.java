@@ -27,7 +27,6 @@ import java.awt.event.ActionEvent;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import javax.swing.JLabel;
-import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 
 public class frmStaticsview extends JFrame {
@@ -57,20 +56,20 @@ public class frmStaticsview extends JFrame {
 
 	public void load() throws Exception {
 		DefaultTableModel dtm = new DefaultTableModel();
-		dtm.addColumn("Thang");
-		dtm.addColumn("ThanhTien");
+		dtm.addColumn("Ngay");
+		dtm.addColumn("TongTien");
 		ArrayList<String> a = new ArrayList<String>();
 		try {
 			KetNoidao kn = new KetNoidao();
 			kn.KetNoi();
-			String sql = "SELECT ngaymua, SUM(gia * soluongmua) AS ThanhTien FROM HoaDon GROUP BY ngaymua";
+			String sql = "SELECT ngaymua, SUM(gia * soluongmua) AS TongTien FROM HoaDon GROUP BY ngaymua ORDER BY ngaymua";
 			PreparedStatement cmd = kn.cn.prepareStatement(sql);
 			ResultSet rs = cmd.executeQuery();
 			while (rs.next())
 			{
-				String Thang = rs.getString(1);
+				String ngay = rs.getString(1);
 				String ThanhTien = rs.getString(2);
-				a.add(Thang + ";" + ThanhTien);
+				a.add(ngay + ";" + ThanhTien);
 			}
 		} catch (SQLException e) {
 			e.printStackTrace();

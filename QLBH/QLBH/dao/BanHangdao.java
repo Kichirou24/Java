@@ -11,7 +11,6 @@ import java.util.ArrayList;
 import java.util.Date;
 
 import bean.BanHangbean;
-import bean.Hangbean;
 
 public class BanHangdao {
 	SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");

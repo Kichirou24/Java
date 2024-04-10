@@ -1,11 +1,8 @@
 package dao;
 
-import java.security.MessageDigest;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.ArrayList;
-
-import javax.xml.bind.DatatypeConverter;
 
 import bean.Accountbean;
 
@@ -34,7 +31,7 @@ public class Accountdao {
 		}
 		return ds;
 	}
-	
+	/*
 	public String hashPassword(String password) throws Exception{
 		MessageDigest md = MessageDigest.getInstance("MD5");
         md.update(password.getBytes());
@@ -42,10 +39,11 @@ public class Accountdao {
         String myHash = DatatypeConverter.printHexBinary(digest).toUpperCase();
         return myHash;
 	}
-	
+	*/
 	public Boolean check(String username, String password) throws Exception {
 		Accountdao adao = new Accountdao();
-		String myHash = hashPassword(password);
+//		String myHash = hashPassword(password);
+		String myHash = password;
 		try {
 			for (Accountbean acc : adao.getAccount())
 			{
@@ -67,7 +65,8 @@ public class Accountdao {
 		cmd.setString(1, acc.getUsername());
 		cmd.setString(2, acc.getFullname());
 		
-		String myHash = hashPassword(acc.getPassword());
+//		String myHash = hashPassword(acc.getPassword());
+		String myHash = acc.getPassword();
         
 		cmd.setString(3, myHash);
 		

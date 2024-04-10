@@ -75,7 +75,7 @@ public class frmLoginview extends JFrame {
 					}
 					if (abo.check(username, password) == true)
 					{
-						frmQLBHview qlbh = new frmQLBHview();
+						frmMainview qlbh = new frmMainview();
 						qlbh.setVisible(true);
 						setVisible(false);
 					}

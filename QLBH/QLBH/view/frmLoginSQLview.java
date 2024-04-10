@@ -26,7 +26,6 @@ public class frmLoginSQLview extends JFrame {
 	private JTextField txtServerName;
 	private JTextField txtDatabaseName;
 	private JTextField txtUser;
-	public static String serverName = "KICHIROU\\SQLEXPRESS", databaseName = "QLBH", user = "sa", password = "1234";
 	private JPasswordField txtPassword;
 
 	/**
@@ -48,15 +47,15 @@ public class frmLoginSQLview extends JFrame {
 	void login() throws HeadlessException, Exception
 	{
 		KetNoidao kn = new KetNoidao();
-		serverName = txtServerName.getText();
-		user = txtUser.getText();
+		KetNoidao.serverName = txtServerName.getText();
+		KetNoidao.user = txtUser.getText();
 		char[] cp = txtPassword.getPassword();
-		password = "";
+		KetNoidao.password = "";
 		for (char c : cp)
 		{
-			password += c;
+			KetNoidao.password += c;
 		}
-		if (serverName.equals("") || user.equals("") || password.equals(""))
+		if (KetNoidao.serverName.equals("") || KetNoidao.user.equals("") || KetNoidao.password.equals(""))
 		{
 			JOptionPane.showMessageDialog(null, "Vui long nhap day du thong tin de login");
 			return;
@@ -81,7 +80,7 @@ public class frmLoginSQLview extends JFrame {
 		addWindowListener(new WindowAdapter() {
 			@Override
 			public void windowOpened(WindowEvent e) {
-				txtDatabaseName.setText(databaseName);
+				txtDatabaseName.setText(KetNoidao.databaseName);
 			}
 		});
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
